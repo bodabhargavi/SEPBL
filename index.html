@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e63946">
+    <title>Foodie Express</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="#home">🍔 Foodie Express</a>
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#cart">Cart 🛒 <span id="cartCount">0</span></a>
+            <a href="#orderHistory">Orders</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">FRESH • FAST • DELICIOUS</p>
+                <h1>Delicious Food<br>Delivered Fast 🚀</h1>
+                <p>Order your favourite food and get it delivered to your doorstep.</p>
+                <a href="#menu" class="button">Order Now</a>
+            </div>
+        </section>
+
+        <section id="menu" class="section">
+            <h2>Our Menu</h2>
+            <p class="section-intro">Find something delicious for every craving.</p>
+            <div class="filters">
+                <input type="search" id="searchInput" placeholder="Search food..." aria-label="Search food">
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                </select>
+            </div>
+            <div id="foodContainer" class="food-container" aria-live="polite"></div>
+        </section>
+
+        <section id="cart" class="section cart-section">
+            <h2>Your Cart 🛒</h2>
+            <div id="cartContainer">
+                <p class="empty-state">Your cart is empty.</p>
+            </div>
+            <div class="cart-total">
+                <span>Total: ₹<span id="cartTotal">0</span></span>
+                <button type="button" onclick="goToCheckout()" class="button">Checkout</button>
+            </div>
+        </section>
+
+        <section id="checkout" class="section">
+            <h2>Checkout</h2>
+            <p class="section-intro">Enter your details to confirm your order.</p>
+            <form id="orderForm">
+                <label for="customerName">Customer Name</label>
+                <input type="text" id="customerName" name="customerName" required maxlength="100" placeholder="Enter your name">
+
+                <label for="address">Delivery Address</label>
+                <textarea id="address" name="address" required maxlength="500" placeholder="Enter delivery address"></textarea>
+
+                <h3 class="checkout-total">Total: ₹<span id="checkoutTotal">0</span></h3>
+                <button type="submit" class="button">Place Order</button>
+            </form>
+            <div id="orderMessage" aria-live="polite"></div>
+        </section>
+
+        <section id="orderHistory" class="section history-section">
+            <h2>My Order History 📦</h2>
+            <p class="section-intro">Your orders placed on this browser appear here.</p>
+            <div id="historyContainer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Foodie Express · Made with ❤️ for food lovers</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
